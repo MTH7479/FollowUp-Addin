@@ -7,92 +7,123 @@
   xsi:type="MailApp">
 
   <Id>0b6a5d31-6b0d-4c2e-9c9a-7a1b2c3d4e5f</Id>
-  <Version>1.0.0.0</Version>
+  <Version>1.0.0.1</Version>
+
   <ProviderName>MTH H.Y Electrical Engineering</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="Follow Up"/>
-  <Description DefaultValue="Create a Dataverse follow-up (PP_FollowUps) for the selected email."/>
-  <IconUrl DefaultValue="https://mth7479.github.io/FollowUp-Addin/assets/icon-64.png"/>
-  <HighResolutionIconUrl DefaultValue="https://mth7479.github.io/FollowUp-Addin/assets/icon-128.png"/>
-  <SupportUrl DefaultValue="https://mth7479.github.io/FollowUp-Addin/"/>
+
+  <DisplayName DefaultValue="Follow Up" />
+  <Description DefaultValue="Create a Dataverse follow-up (PP_FollowUps) for the selected email." />
+
+  <IconUrl DefaultValue="https://proud-river-016d1e410.7.azurestaticapps.net/assets/icon-64.png" />
+  <HighResolutionIconUrl DefaultValue="https://proud-river-016d1e410.7.azurestaticapps.net/assets/icon-128.png" />
+  <SupportUrl DefaultValue="https://proud-river-016d1e410.7.azurestaticapps.net/" />
 
   <Hosts>
-    <Host Name="Mailbox"/>
+    <Host Name="Mailbox" />
   </Hosts>
+
   <Requirements>
     <Sets>
-      <Set Name="Mailbox" MinVersion="1.3"/>
+      <Set Name="Mailbox" MinVersion="1.3" />
     </Sets>
   </Requirements>
+
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://mth7479.github.io/FollowUp-Addin/taskpane.html"/>
+        <SourceLocation DefaultValue="https://proud-river-016d1e410.7.azurestaticapps.net/taskpane.html" />
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
   </FormSettings>
 
   <Permissions>ReadItem</Permissions>
+
   <Rule xsi:type="RuleCollection" Mode="Or">
-    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
   </Rule>
 
   <DisableEntityHighlighting>false</DisableEntityHighlighting>
 
-  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+  <VersionOverrides
+    xmlns="http://schemas.microsoft.com/office/mailappversionoverrides"
+    xsi:type="VersionOverridesV1_0">
+
     <Requirements>
       <bt:Sets DefaultMinVersion="1.3">
-        <bt:Set Name="Mailbox"/>
+        <bt:Set Name="Mailbox" />
       </bt:Sets>
     </Requirements>
+
     <Hosts>
       <Host xsi:type="MailHost">
         <DesktopFormFactor>
-          <FunctionFile resid="Commands.Url"/>
+
+          <FunctionFile resid="Commands.Url" />
+
           <ExtensionPoint xsi:type="MessageReadCommandSurface">
             <OfficeTab id="TabDefault">
+
               <Group id="msgReadFollowUpGroup">
-                <Label resid="GroupLabel"/>
+                <Label resid="GroupLabel" />
+
                 <Control xsi:type="Button" id="msgReadFollowUpButton">
-                  <Label resid="TaskpaneButton.Label"/>
+
+                  <Label resid="TaskpaneButton.Label" />
+
                   <Supertip>
-                    <Title resid="TaskpaneButton.Label"/>
-                    <Description resid="TaskpaneButton.Tooltip"/>
+                    <Title resid="TaskpaneButton.Label" />
+                    <Description resid="TaskpaneButton.Tooltip" />
                   </Supertip>
+
                   <Icon>
-                    <bt:Image size="16" resid="Icon.16"/>
-                    <bt:Image size="32" resid="Icon.32"/>
-                    <bt:Image size="80" resid="Icon.80"/>
+                    <bt:Image size="16" resid="Icon.16" />
+                    <bt:Image size="32" resid="Icon.32" />
+                    <bt:Image size="80" resid="Icon.80" />
                   </Icon>
+
                   <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="Taskpane.Url"/>
+                    <SourceLocation resid="Taskpane.Url" />
                   </Action>
+
                 </Control>
+
               </Group>
+
             </OfficeTab>
+
           </ExtensionPoint>
+
         </DesktopFormFactor>
       </Host>
     </Hosts>
 
     <Resources>
+
       <bt:Images>
-        <bt:Image id="Icon.16" DefaultValue="https://mth7479.github.io/FollowUp-Addin/assets/icon-16.png"/>
-        <bt:Image id="Icon.32" DefaultValue="https://mth7479.github.io/FollowUp-Addin/assets/icon-32.png"/>
-        <bt:Image id="Icon.80" DefaultValue="https://mth7479.github.io/FollowUp-Addin/assets/icon-80.png"/>
+        <bt:Image id="Icon.16" DefaultValue="https://proud-river-016d1e410.7.azurestaticapps.net/assets/icon-16.png" />
+        <bt:Image id="Icon.32" DefaultValue="https://proud-river-016d1e410.7.azurestaticapps.net/assets/icon-32.png" />
+        <bt:Image id="Icon.80" DefaultValue="https://proud-river-016d1e410.7.azurestaticapps.net/assets/icon-80.png" />
       </bt:Images>
+
       <bt:Urls>
-        <bt:Url id="Commands.Url" DefaultValue="https://mth7479.github.io/FollowUp-Addin/commands.html"/>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://mth7479.github.io/FollowUp-Addin/taskpane.html"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://proud-river-016d1e410.7.azurestaticapps.net/commands.html" />
+        <bt:Url id="Taskpane.Url" DefaultValue="https://proud-river-016d1e410.7.azurestaticapps.net/taskpane.html" />
       </bt:Urls>
+
       <bt:ShortStrings>
-        <bt:String id="GroupLabel" DefaultValue="Follow Up"/>
-        <bt:String id="TaskpaneButton.Label" DefaultValue="Follow Up"/>
+        <bt:String id="GroupLabel" DefaultValue="Follow Up" />
+        <bt:String id="TaskpaneButton.Label" DefaultValue="Follow Up" />
       </bt:ShortStrings>
+
       <bt:LongStrings>
-        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Create a follow-up record for this email."/>
+        <bt:String id="TaskpaneButton.Tooltip"
+                   DefaultValue="Create a follow-up record for this email." />
       </bt:LongStrings>
+
     </Resources>
+
   </VersionOverrides>
+
 </OfficeApp>
