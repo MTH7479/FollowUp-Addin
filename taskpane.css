@@ -1,0 +1,20 @@
+* { box-sizing: border-box; }
+body { font-family: "Segoe UI", Arial, sans-serif; margin: 0; padding: 12px; color: #201f1e; background: #faf9f8; }
+h1 { font-size: 15px; margin: 0 0 10px; color: #0078d4; }
+.preview { background: #fff; border: 1px solid #edebe9; border-radius: 4px; padding: 8px 10px; margin-bottom: 12px; font-size: 12px; }
+.preview .row { display: flex; gap: 8px; padding: 2px 0; }
+.preview .k { color: #605e5c; min-width: 56px; }
+.preview .v { color: #201f1e; word-break: break-word; }
+form { display: flex; flex-direction: column; gap: 4px; }
+label { font-size: 12px; font-weight: 600; margin-top: 8px; }
+.req { color: #a4262c; }
+input, select { padding: 7px 8px; border: 1px solid #8a8886; border-radius: 3px; font-size: 13px; background: #fff; }
+input:focus, select:focus { outline: 2px solid #0078d4; border-color: #0078d4; }
+button { margin-top: 14px; padding: 9px 12px; background: #0078d4; color: #fff; border: none; border-radius: 3px; font-size: 14px; font-weight: 600; cursor: pointer; }
+button:hover:not(:disabled) { background: #106ebe; }
+button:disabled { background: #c8c6c4; cursor: default; }
+.status { margin-top: 12px; font-size: 13px; padding: 9px 10px; border-radius: 3px; display: none; }
+.status.show { display: block; }
+.status.ok { background: #dff6dd; color: #0e700e; border: 1px solid #9fd89f; }
+.status.err { background: #fde7e9; color: #a4262c; border: 1px solid #f1a7ab; }
+.status.info { background: #eff6fc; color: #005a9e; border: 1px solid #a6d8ff; }

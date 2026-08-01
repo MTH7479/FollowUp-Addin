@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Follow Up</title>
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <link rel="stylesheet" href="taskpane.css"/>
+</head>
+<body>
+  <main id="app">
+    <h1>מעקב מייל&nbsp;/&nbsp;Follow Up</h1>
+
+    <section class="preview">
+      <div class="row"><span class="k">נושא</span><span id="pv-subject" class="v">—</span></div>
+      <div class="row"><span class="k">נמענים</span><span id="pv-to" class="v">—</span></div>
+      <div class="row"><span class="k">נשלח</span><span id="pv-sent" class="v">—</span></div>
+    </section>
+
+    <form id="followupForm">
+      <label for="projectNumber">מספר פרויקט <span class="req">*</span></label>
+      <input id="projectNumber" name="projectNumber" type="text" autocomplete="off" required/>
+
+      <label for="reminderDays">ימים בין תזכורות</label>
+      <input id="reminderDays" name="reminderDays" type="number" min="1" step="1" value="3"/>
+
+      <label for="maxReminders">מספר תזכורות מקסימלי</label>
+      <input id="maxReminders" name="maxReminders" type="number" min="1" step="1" value="3"/>
+
+      <label for="priority">עדיפות</label>
+      <select id="priority" name="priority">
+        <option value="126760000">נמוכה / Low</option>
+        <option value="126760001" selected>רגילה / Normal</option>
+        <option value="126760002">גבוהה / High</option>
+        <option value="126760003">דחופה / Urgent</option>
+      </select>
+
+      <button id="submitBtn" type="submit">צור מעקב</button>
+    </form>
+
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+  </main>
+  <script src="config.js"></script>
+  <script src="taskpane.js"></script>
+</body>
+</html>
