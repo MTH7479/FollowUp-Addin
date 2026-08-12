@@ -25,6 +25,12 @@
     var sent = "";
     try { if (item.dateTimeCreated) sent = new Date(item.dateTimeCreated).toISOString(); } catch (e) {}
 
+    var userEmail = "";
+    try {
+      userEmail = (Office.context.mailbox.userProfile &&
+                   Office.context.mailbox.userProfile.emailAddress) || "";
+    } catch (e) { userEmail = ""; }
+
     return {
       subject: item.subject || "",
       conversationId: item.conversationId || "",
@@ -32,7 +38,8 @@
       messageId: restId,
       sender: sender || "",
       recipients: to.join("; "),
-      sentDateTime: sent
+      sentDateTime: sent,
+      userEmail: userEmail
     };
   }
 
@@ -64,6 +71,7 @@
       sender: data.sender,
       recipients: data.recipients,
       sentDateTime: data.sentDateTime,
+      userEmail: data.userEmail,
       projectNumber: projectNumber,
       reminderDays: intOr("reminderDays", cfg.DEFAULT_REMINDER_DAYS || 3),
       maxReminders: intOr("maxReminders", cfg.DEFAULT_MAX_REMINDERS || 3),
